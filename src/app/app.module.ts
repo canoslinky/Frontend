@@ -7,17 +7,20 @@ import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { AppRegisterComponent } from './app-register/app-register.component';
 
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { ApiService } from './api.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
-const routes = [ 
-  { path:'register' , component:AppRegisterComponent}
-]
+const routes = [
+  { path: 'register' , component: AppRegisterComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
     AppRegisterComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,11 @@ const routes = [
       routes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpModule
     ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
