@@ -18,7 +18,8 @@ import { AppUsersComponent } from './app-users/app-users.component';
 const routes = [
   { path: 'register' , component: AppRegisterComponent },
   { path: 'login' , component: AppLoginComponent },
-  { path: 'users', component: AppUsersComponent }
+  { path: 'users', component: AppUsersComponent },
+  { path: 'profile/:id', component: AppUsersComponent }
 ];
 
 @NgModule({
