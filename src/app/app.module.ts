@@ -11,9 +11,14 @@ import { RouterModule } from '@angular/router';
 import { ApiService } from './api.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { AppLoginComponent } from './app-login/app-login.component';
+import { AuthService } from './auth.service';
+import { AppUsersComponent } from './app-users/app-users.component';
 
 const routes = [
-  { path: 'register' , component: AppRegisterComponent}
+  { path: 'register' , component: AppRegisterComponent },
+  { path: 'login' , component: AppLoginComponent },
+  { path: 'users', component: AppUsersComponent }
 ];
 
 @NgModule({
@@ -21,6 +26,8 @@ const routes = [
     AppComponent,
     AppNavbarComponent,
     AppRegisterComponent,
+    AppLoginComponent,
+    AppUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,7 @@ const routes = [
     HttpClientModule,
     HttpModule
     ],
-  providers: [ApiService],
+  providers: [ApiService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

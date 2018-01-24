@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../api.service';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -10,12 +10,12 @@ import { ApiService } from '../api.service';
 })
 export class AppRegisterComponent implements OnInit {
   registerData = {}
-  constructor(private apiService: ApiService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
   
   post(){
-    this.apiService.sendUserRegistration(this.registerData);
+    this.authService.registerUser(this.registerData);
   }
 }
