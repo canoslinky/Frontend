@@ -8,9 +8,9 @@ export class ApiService {
 
   users = [];
 
-  getUsers(){
+  getUsers() {
     this.http.get('http://localhost:3000/users').subscribe(res => {
-      this.users = res.json()
+      this.users = res.json();
     });
   }
 
