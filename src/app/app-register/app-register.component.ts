@@ -9,13 +9,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./app-register.component.css']
 })
 export class AppRegisterComponent implements OnInit {
-  registerData = {}
+  registerData = { };
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
-  
-  post(){
+
+  post() {
     this.authService.registerUser(this.registerData);
   }
 }

@@ -12,7 +12,7 @@ export class AppLoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  post(){
+  post() {
     this.authService.loginUser(this.loginData);
   }
 }

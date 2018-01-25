@@ -14,12 +14,13 @@ import { HttpModule } from '@angular/http';
 import { AppLoginComponent } from './app-login/app-login.component';
 import { AuthService } from './auth.service';
 import { AppUsersComponent } from './app-users/app-users.component';
+import { AppProfileComponent } from './app-profile/app-profile.component';
 
 const routes = [
   { path: 'register' , component: AppRegisterComponent },
   { path: 'login' , component: AppLoginComponent },
   { path: 'users', component: AppUsersComponent },
-  { path: 'profile/:id', component: AppUsersComponent }
+  { path: 'profile/:id', component: AppProfileComponent },
 ];
 
 @NgModule({
@@ -29,6 +30,7 @@ const routes = [
     AppRegisterComponent,
     AppLoginComponent,
     AppUsersComponent,
+    AppProfileComponent,
   ],
   imports: [
     BrowserModule,

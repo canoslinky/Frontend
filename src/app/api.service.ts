@@ -7,6 +7,7 @@ export class ApiService {
   constructor( private http: Http) { }
 
   users = [];
+  user = {};
 
   getUsers() {
     this.http.get('http://localhost:3000/users').subscribe(res => {
@@ -14,12 +15,7 @@ export class ApiService {
     });
   }
 
-  // sendUserRegistration(registerData) {
-  //   this.http.post('http://localhost:3000/register', registerData).subscribe( res => {
-  //   });
-  // }
-  // loginUser(loginData){
-  //   this.http.post('http://localhost:3000/login', loginData).subscribe( res => {
-  //   });
-  // }
+  getUser( id ) {
+    return this.http.get('http://localhost:3000/profile/' + id );
+  }
 }
