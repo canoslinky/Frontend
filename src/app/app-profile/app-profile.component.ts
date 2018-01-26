@@ -14,6 +14,4 @@ export class AppProfileComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     this.apiService.getUser(id).subscribe( data =>  this.profile =  data.json());
   }
-  getUser() {
-  }
 }

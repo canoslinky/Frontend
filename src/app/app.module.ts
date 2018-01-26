@@ -15,12 +15,16 @@ import { AppLoginComponent } from './app-login/app-login.component';
 import { AuthService } from './auth.service';
 import { AppUsersComponent } from './app-users/app-users.component';
 import { AppProfileComponent } from './app-profile/app-profile.component';
+import { AppPostComponent } from './app-post/app-post.component';
+import { AppPostsComponent } from './app-posts/app-posts.component';
 
 const routes = [
   { path: 'register' , component: AppRegisterComponent },
   { path: 'login' , component: AppLoginComponent },
   { path: 'users', component: AppUsersComponent },
   { path: 'profile/:id', component: AppProfileComponent },
+  { path: 'post', component: AppPostComponent },
+  { path: 'posts', component: AppPostsComponent },
 ];
 
 @NgModule({
@@ -31,6 +35,8 @@ const routes = [
     AppLoginComponent,
     AppUsersComponent,
     AppProfileComponent,
+    AppPostComponent,
+    AppPostsComponent,
   ],
   imports: [
     BrowserModule,
