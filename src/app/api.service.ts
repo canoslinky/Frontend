@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
 
-  constructor( private http: Http) { }
+  constructor( private http: HttpClient) { }
 
   users = [];
   user = {};
   posts = [];
 
   getUsers() {
-    this.http.get('http://localhost:3000/users').subscribe(res => {
-      this.users = res.json();
+    this.http.get<any>('http://localhost:3000/users').subscribe(res => {
+      this.users = res;
     });
   }
 
@@ -25,8 +25,8 @@ export class ApiService {
     }) ;
   }
   getPosts(userId) {
-    return this.http.get('http://localhost:3000/posts/' + userId).subscribe( res => {
-      this.posts = res.json();
+    return this.http.get<any>('http://localhost:3000/posts/' + userId).subscribe( res => {
+      this.posts = res;
     });
   }
 }

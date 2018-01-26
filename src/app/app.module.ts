@@ -9,14 +9,15 @@ import { AppRegisterComponent } from './app-register/app-register.component';
 
 import { RouterModule } from '@angular/router';
 import { ApiService } from './api.service';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { AppLoginComponent } from './app-login/app-login.component';
 import { AuthService } from './auth.service';
 import { AppUsersComponent } from './app-users/app-users.component';
 import { AppProfileComponent } from './app-profile/app-profile.component';
 import { AppPostComponent } from './app-post/app-post.component';
 import { AppPostsComponent } from './app-posts/app-posts.component';
+import { AuthInterceptorService } from './authinterceptor.service';
 
 const routes = [
   { path: 'register' , component: AppRegisterComponent },
@@ -46,10 +47,16 @@ const routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     FormsModule,
-    HttpClientModule,
-    HttpModule
+    HttpClientModule
     ],
-  providers: [ApiService, AuthService],
+  providers: [ApiService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+   }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
