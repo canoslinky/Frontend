@@ -11,8 +11,7 @@ export class AppNavbarComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    console.log(this.authService.Token());
-    console.log(this.authService.isAuthenticated());
+
   }
 
 }
