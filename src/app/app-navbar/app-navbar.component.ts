@@ -7,11 +7,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./app-navbar.component.css']
 })
 export class AppNavbarComponent implements OnInit {
-
+  loginData = {};
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
 
   }
-
+  post() {
+    this.authService.loginUser(this.loginData);
+  }
 }
