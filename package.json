@@ -25,7 +25,7 @@
     "bootstrap": "^4.0.0-beta.3",
     "core-js": "^2.4.1",
     "jquery": "^3.5.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "nginx": "0.0.0",
     "popper.js": "^1.14.7",
     "rxjs": "^5.5.6",
